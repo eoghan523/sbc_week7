@@ -60,9 +60,11 @@ def is_prime(n):
             return False
     return True
 
-class TestMathFunctions(unittest.TestCase):
-    def test_factorial(self):
-        """Test cases for factorial function."""
+class TestPalindromeCheck(unittest.TestCase):
+     def test_is_palindrome(self):
+      self.assertTrue(is_palindrome())
+     
+        
         self.assertEqual(factorial(0), 1)
         self.assertEqual(factorial(5), 120)
 

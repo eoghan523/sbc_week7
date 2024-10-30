@@ -2,8 +2,8 @@ import math #Imports the built in python math module to allow for basic clauclat
 import pytest  #Imports the pytest module.
 
 #imports eoghan_W7S1_assigment file and imports the functions as listed.
-from eoghan_W7S1_assignment import (
-    factorial, gcd, power, is_sorted, fibonacci, )
+from eoghan_W7S1_assignment import (factorial, gcd, power, is_sorted, fibonacci)
+
 
 def test_factorial():
     assert factorial(10) == 3628800 # Tests the factorial of 10. test expects 3628800.

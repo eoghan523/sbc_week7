@@ -2,7 +2,7 @@ import math #Imports the built in python math module to allow for basic clauclat
 import pytest  #Imports the pytest module.
 
 #imports eoghan_W7S1_assigment file and imports the functions as listed.
-from eoghan_W7S1_assignment import (factorial, gcd, power, is_sorted, fibonacci)
+from eoghan_W7S1_assignment import(factorial, gcd, power, is_sorted, fibonacci)
 
 
 def test_factorial():
@@ -33,23 +33,16 @@ def test_power():
     # Test 3 raised to the power of 3 (expected: 27).
     assert power(3, 3) == 27
 
-def is_sorted(lst):
-    # Check if the list is equal to its sorted version
-    return lst == sorted(lst)
+def test_is_sorted():
+    assert is_sorted([1, 2, 3, 4]) is True  # Tests a sorted list.
+    assert is_sorted([4, 3, 2, 1]) is False  # Tests an unsorted list.
 
-def fibonacci(n):
-    # Check if the input is a negative integer
-    if n < 0:
-        # Raise a ValueError if the input is negative
-        raise ValueError("Input must be a non-negative integer")
-    
-    # Initialize the first two Fibonacci numbers
-    a, b = 0, 1
-    
-    # Iterate n times to compute the nth Fibonacci number
-    for _ in range(n):
-        # Update a to be the next Fibonacci number and b to the sum of a and b
-        a, b = b, a + b
-    
-    # Return the nth Fibonacci number
-    return a
+
+def test_fibonacci():
+    assert fibonacci(0) == 0  # Tests the 0th Fibonacci number.
+    assert fibonacci(1) == 1  # Tests the 1st Fibonacci number.
+    assert fibonacci(5) == 5  # Tests the 5th Fibonacci number.
+    assert fibonacci(10) == 55  # Tests the 10th Fibonacci number.
+
+    with pytest.raises(ValueError):  # Tests that ValueError is raised for negative inputs.
+        fibonacci(-1)

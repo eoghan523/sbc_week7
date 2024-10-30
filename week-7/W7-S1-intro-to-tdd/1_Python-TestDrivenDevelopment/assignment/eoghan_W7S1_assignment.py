@@ -78,5 +78,26 @@ def matrix_addition(matrix1, matrix2):
     # Return the resulting matrix containing the element-wise sums
     return result
 
+#**Area of Rectangle** Function to calculate the Area of a Rectangle.
+def area_rectangle(length, width):
+    # Return area calculated as length multiplied by width
+    return length * width
 
+#**Area of Circle** Function to calculate the Area of a Circle.
+def area_circle(radius):
+    # Return area using formula π * r^2
+    return math.pi * radius ** 2
 
+#**Perfect Square Check** Function to calculate the Perfect Square.
+def is_perfect_square(n):
+    # Check if the input number is negative (negative numbers cannot be perfect squares)
+    if n < 0:
+        return False  # Return False immediately if n is negative
+
+    # Calculate the integer square root of n by first finding the square root (returns a float)
+    # and then converting it to an integer using int()
+    root = int(math.sqrt(n))
+
+    # Check if squaring the integer root gives back the original number n
+    # If root * root equals n, then n is a perfect square; otherwise, it is not
+    return root * root == n

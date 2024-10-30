@@ -31,3 +31,25 @@ def gcd(a, b):
 def power(base, exponent):
  # Return the result of base raised to the power of exponent
     return base ** exponent
+
+
+def is_sorted(lst):
+    # Check if the list is equal to its sorted version
+    return lst == sorted(lst)
+
+def fibonacci(n):
+    # Check if the input is a negative integer
+    if n < 0:
+        # Raise a ValueError if the input is negative
+        raise ValueError("Input must be a non-negative integer")
+    
+    # This line Initializes the first two Fibonacci numbers
+    a, b = 0, 1
+    
+    # Iterate n times to compute the nth Fibonacci number
+    for _ in range(n):
+        # Update a to be the next Fibonacci number and b to the sum of a and b
+        a, b = b, a + b
+    
+    # Return the nth Fibonacci number
+    return a

@@ -2,14 +2,17 @@ import math #Imports the built in python math module to allow for basic clauclat
 import pytest  #Imports the pytest module.
 
 #imports eoghan_W7S1_assigment file and imports the functions as listed.
-from eoghan_W7S1_assignment import(factorial, gcd, power, is_sorted, fibonacci, matrix_addition, area_circle, area_rectangle, is_perfect_square)
+from eoghan_W7S1_assignment import (
+    factorial, gcd, power, is_sorted, fibonacci,
+    matrix_addition, area_rectangle, area_circle, is_perfect_square
+)
 
 
 def test_factorial():
     assert factorial(5) == 120 #tests the factorial of 5. The test expects 120
     assert factorial(10) == 3628800 # Tests the factorial of 10. test expects 3628800.
     assert factorial(0) == 1 # Test the factorial of 0. The test expects 1.
-    
+
     with pytest.raises(ValueError): #tests the valueError for negative integers.
         factorial(-1)
 
@@ -82,3 +85,30 @@ def test_is_perfect_square():  # Define a test function for checking perfect squ
     assert is_perfect_square(20) is False  # Check that 20 is identified as not a perfect square
     # Test with 0, which is a perfect square (0 * 0), expecting True
     assert is_perfect_square(0) is True  # Verify that 0 is identified as a perfect square
+
+
+
+
+
+### 5. **📤 Print and verify results**  
+
+#PS C:\Users\eogha\sbc_week7\week-7\W7-S1-intro-to-tdd\1_Python-TestDrivenDevelopment\assignment> pytest -v
+#============================================================== test session starts ===============================================================
+#platform win32 -- Python 3.12.6, pytest-8.3.3, pluggy-1.5.0 -- C:\Users\eogha\AppData\Local\Programs\Python\Python312\python.exe
+#cachedir: .pytest_cache
+#rootdir: C:\Users\eogha\sbc_week7\week-7\W7-S1-intro-to-tdd\1_Python-TestDrivenDevelopment\assignment
+#collected 9 items                                                                                                                                  
+
+#test_eoghan_W7S1_assignment.py::test_factorial PASSED                                                                                       [ 11%]
+#test_eoghan_W7S1_assignment.py::test_gcd PASSED                                                                                             [ 22%] 
+#test_eoghan_W7S1_assignment.py::test_power PASSED                                                                                           [ 33%] 
+#test_eoghan_W7S1_assignment.py::test_is_sorted PASSED                                                                                       [ 44%] 
+#test_eoghan_W7S1_assignment.py::test_fibonacci PASSED                                                                                       [ 55%] 
+#test_eoghan_W7S1_assignment.py::test_matrix_addition PASSED                                                                                 [ 66%] 
+#test_eoghan_W7S1_assignment.py::test_area_rectangle PASSED                                                                                  [ 77%] 
+#test_eoghan_W7S1_assignment.py::test_area_circle PASSED                                                                                     [ 88%]
+#test_eoghan_W7S1_assignment.py::test_is_perfect_square PASSED                                                                               [100%] 
+
+#=============================================================== 9 passed in 0.02s ================================================================ 
+#PS C:\Users\eogha\sbc_week7\week-7\W7-S1-intro-to-tdd\1_Python-TestDrivenDevelopment\assignment> 
+

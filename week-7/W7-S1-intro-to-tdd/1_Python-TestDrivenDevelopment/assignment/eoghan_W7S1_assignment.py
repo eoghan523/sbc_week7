@@ -32,11 +32,12 @@ def power(base, exponent):
  # Return the result of base raised to the power of exponent
     return base ** exponent
 
-
 def is_sorted(lst):
     # Check if the list is equal to its sorted version
     return lst == sorted(lst)
 
+
+#**Fibonacci** Function to calculate the nth fibonacci number. 
 def fibonacci(n):
     # Check if the input is a negative integer
     if n < 0:
@@ -53,3 +54,29 @@ def fibonacci(n):
     
     # Return the nth Fibonacci number
     return a
+
+#**Matrix Addition** Function for adding two Matrices.
+def matrix_addition(matrix1, matrix2):
+    # Check if dimensions of both matrices match
+    # First, check if the number of rows in both matrices are equal
+    # Then, check if each pair of corresponding rows has the same length
+    if len(matrix1) != len(matrix2) or any(len(row1) != len(row2) for row1, row2 in zip(matrix1, matrix2)):
+        # If the matrices do not have the same dimensions, raise a ValueError
+        raise ValueError("Matrics must have the same dimensions...")
+    
+    # Add corresponding elements in the matrices
+    result = [
+        # For each row index `i` in `matrix1`, create a new row
+        [
+            # Add elements at the same column `j` in both `matrix1` and `matrix2`
+            matrix1[i][j] + matrix2[i][j]
+            for j in range(len(matrix1[0]))  # Iterates over each column in the row
+        ]
+        for i in range(len(matrix1))  # Iterates over each row
+    ]
+    
+    # Return the resulting matrix containing the element-wise sums
+    return result
+
+
+

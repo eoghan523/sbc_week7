@@ -2,7 +2,7 @@ import math #Imports the built in python math module to allow for basic clauclat
 import pytest  #Imports the pytest module.
 
 #imports eoghan_W7S1_assigment file and imports the functions as listed.
-from eoghan_W7S1_assignment import(factorial, gcd, power, is_sorted, fibonacci)
+from eoghan_W7S1_assignment import(factorial, gcd, power, is_sorted, fibonacci, matrix_addition)
 
 
 def test_factorial():
@@ -46,3 +46,15 @@ def test_fibonacci():
 
     with pytest.raises(ValueError):  # Tests that ValueError is raised for negative inputs.
         fibonacci(-1)
+
+
+# Test for matrix_addition function
+def test_matrix_addition():
+    # Define two matrices to add
+    matrix1 = [[1, 2], [3, 4]]      # First matrix to be tested
+    matrix2 = [[5, 6], [7, 8]]      # Second matrix to be tested
+    # Test addition of matrix1 and matrix2. The expected output is [[6, 8], [10, 12]]
+    assert matrix_addition(matrix1, matrix2) == [[6, 8], [10, 12]]
+    # Test for ValueError if matrices are of different dimensions
+    with pytest.raises(ValueError):      #tests the ValueError function
+        matrix_addition([[1, 2], [3, 4]], [[5, 6]])

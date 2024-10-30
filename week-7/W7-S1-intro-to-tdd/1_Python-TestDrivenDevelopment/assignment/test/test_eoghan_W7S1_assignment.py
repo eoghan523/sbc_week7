@@ -6,6 +6,7 @@ from eoghan_W7S1_assignment import(factorial, gcd, power, is_sorted, fibonacci, 
 
 
 def test_factorial():
+    assert factorial(5) == 120 #tests the factorial of 5. The test expects 120
     assert factorial(10) == 3628800 # Tests the factorial of 10. test expects 3628800.
 
     assert factorial(0) == 1 # Test the factorial of 0. The test expects 1.

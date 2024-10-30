@@ -15,3 +15,19 @@ def factorial(n):
         
      # Return the factorial 
     return result
+
+#**GCD Calculation**  A function to clculate gcd (greatest common divisor).
+def gcd(a, b):
+    # Continue looping as long as b is not zero
+    while b:
+        # a is assigned the value of b, and b is assigned the value of a % b. This updates the values to continue the algorithm.
+        a, b = b, a % b
+    
+    # When b becomes zero, the function returns a, which is the GCD of the original inputs.
+    return a
+
+
+#**Power Calculation** 
+def power(base, exponent):
+ # Return the result of base raised to the power of exponent
+    return base ** exponent
